@@ -1,0 +1,29 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<form method="post">
+    <input asp-for="BlogArticle.Title" />
+    <div class="form-group">
+        <label asp-for="BlogArticle.PostCategory" class="control-label"></label>
+        <select asp-for="BlogArticle.PostCategory.Id" class="form-control" asp-items="Model.PostCategories">
+            <option value="">--Choose a Catergory--</option>
+        </select>
+
+        @Html.HiddenFor(m=>m.BlogArticle.PostCategory.Title )
+
+        @Html.HiddenFor(m=>m.BlogArticle.PostCategory.Description )
+
+        <span asp-validation-for="BlogArticle.PostCategory" class="text-danger"></span>
+
+        <button type="submit">Sumit</button>
+</form>
+
+<partial name="_Foo" />
+
+@await Component.InvokeAsync("User");

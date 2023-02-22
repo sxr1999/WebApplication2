@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+  
+}
+
+
+
+<div>
+    <button id="pdf" onclick="Test()">open</button>
+    <a target="_blank" href="/pdf/test.pdf">Test</a>
+    
+</div>
+
+@*@Html.DropDownList("PageSize", new SelectList(new Dictionary<string, int> { { "10", 10 }, { "20", 20 }, { "30", 30 }, { "40", 40 }, { "50", 50 }, { "100", 100 } }, "Key", "Value", Convert.ToString(ViewBag.PageSize)), new { id = "SearchPageSize", style = "width: 100px;", onchange=string.Format("AAA('{0}')", ViewBag.CurrentSort) })
+
+    @section Scripts{
+        <script>
+        function AAA(a){
+            alert(a)
+        }
+        </script>
+    }*@
+
+@section Scripts{
+    <script>
+        function Test(){
+            window.open(,'PDF');
+        }
+    </script>
+}
